@@ -1,5 +1,5 @@
 ---
-layout: notes
+layout: note
 title: About
 permalink: /about
 ---

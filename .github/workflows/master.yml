@@ -16,15 +16,8 @@ jobs:
     runs-on: ubuntu-latest
       # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: update digital garden submodule
-        uses: fatjyc/update-submodule-action@v1.0
-        with:
-          user: oldwinter
-          token: ${{ secrets.GH_TOKEN }}
-          repo_owner: oldwinter
-          repo: dg
-          committor_username: cdd
-          committor_email: cdd2zju@gmail.com
-          target_branch: main
-          path: _notes
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Checkout submodules
+        run: git submodule update --init --recursive
     

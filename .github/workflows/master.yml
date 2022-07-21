@@ -25,6 +25,6 @@ jobs:
           repo: dg
           committor_username: cdd
           committor_email: cdd2zju@gmail.com
-          target_branch: master
+          target_branch: main
           path: _notes
     

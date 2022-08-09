@@ -4,7 +4,10 @@ title: Home
 id: home
 permalink: /
 ---
-
+<!-- 改成从源文件复制，避免每次改2份儿。
+netlify构建代码：cp -f _notes/AboutTheGarden.md _pages/index.md && mv _notes/Extras . && jekyll build --trace
+ -->
+ 
 hello👋，我是oldwinter❄️，写过几万行代码，带过十几人团队。
 
 这里是一座「全开放式，每日更新」的[[数字花园]]，由原子化的[[卡片笔记]]编织而成。目前主要在浇灌这2个领域⭕：

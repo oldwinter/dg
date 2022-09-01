@@ -14,3 +14,14 @@
         crossorigin="anonymous"
         async>
 </script>
+
+{{/*  嵌入waline匿名评论系统  */}}
+<br>
+
+<div id="waline"></div>
+  <script>
+    Waline.init({
+      el: '#waline',
+      serverURL: 'https://waline.oldwinter.top',
+    });
+  </script>

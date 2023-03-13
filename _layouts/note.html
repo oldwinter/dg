@@ -7,7 +7,7 @@ layout: default
     <h1>{{ page.title }}</h1>
     <!-- 更新时间一直都是显示为构建时间，先屏蔽 -->
     <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{% if page.type != 'pages' %}
-      最近更新时间 {{ page.last_modified_at | date: "%B %-d, %Y" }}
+      更新于 {{ page.last_modified_at | date: "%B %-d, %Y" }}
       {% endif %}
     </time> 
   </div>

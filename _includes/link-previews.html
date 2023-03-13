@@ -13,14 +13,14 @@
     overflow: hidden;
     position: absolute;
     width: 400px;
-    height: 250px;
+    height: 400px; /* 悬浮卡片改高一点 */
     font-size: 0.8em;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     opacity: 0;
     transition: opacity 100ms;
   }
 
-  #tooltip-wrapper:after {
+  /* #tooltip-wrapper:after {
 		content: "";
 		position: absolute;
 		z-index: 1;
@@ -30,7 +30,7 @@
 		background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
 		width: 100%;
 		height: 75px;
-  }
+  } */
 </style>
 <!-- 给悬浮预览卡片加滚动条。 -->
 <div style="opacity: 0; display: none; overflow-y: scroll;" id='tooltip-wrapper'>

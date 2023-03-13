@@ -89,7 +89,6 @@ class BidirectionalLinksGenerator < Jekyll::Generator
 
       # Edges: Jekyll
       current_note.data['backlinks'] = notes_linking_to_current_note
-
       # Edges: Graph
       # notes_linking_to_current_note.each do |n|
       #   graph_edges << {

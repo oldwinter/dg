@@ -1,3 +1,3 @@
 [build]
-  command = "jekyll build --trace"
+  command = "cat _notes/AboutTheGarden.md _pages/index.md > tmp.md && mv tmp.md _pages/index.md && jekyll build --trace"
   publish = "_site"

@@ -1,6 +1,6 @@
 title:               🌱 oldwinterの数字花园
 include:             ['_pages']
-exclude:             ['_includes/notes_graph.json', '_notes/.github','_notes/.obsidian']
+exclude:             ['_includes/notes_graph.json', '_notes/.github','_notes/.obsidian', 'README.md', 'sync_notes.py', 'requirements.txt', 'SYNC_README.md']
 # You may need to change the base URL depending on your deploy configuration.
 # Specifically, when using GitHub Pages, the baseurl should point to where GitHub
 # Pages deploys your repository (which is usually the repository name).

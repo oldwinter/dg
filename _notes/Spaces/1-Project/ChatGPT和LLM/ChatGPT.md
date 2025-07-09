@@ -1,0 +1,24 @@
+---
+created: '2023-02-15'
+cssclasses: ''
+modified: '2024-11-15'
+permalink: /Spaces/1-Project/ChatGPT和LLM/ChatGPT.md
+publish: true
+published: '2025-07-09T18:54:54.440+08:00'
+tags:
+- AI产品
+title: chatGPT
+---
+[[Spaces/1-Project/ChatGPT和LLM/chatgpt windows 下载]]
+
+[[Cards/claude 伪多模态]]
+
+[[Spaces/1-Project/ChatGPT和LLM/chatGPT web页面的自带提示词破解]]
+
+## 参考文献
+
+[[ChatGPT高质量prompt技巧分享.pdf]]
+
+[【极客时间】李佳芮：ChatGPT 从0到1.pdf](https://pub-pic.oldwinter.top/2025/02/53fee29a5d4b9756d477d2e413d3c349.pdf)
+
+[万字干货！ChatGPT 从零完全上手实操指南！ - 少数派](https://sspai.com/post/79434)

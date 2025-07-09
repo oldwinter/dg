@@ -1,0 +1,12 @@
+---
+created: '2025-04-04T01:03:31.533+08:00'
+cssclasses: ''
+modified: '2025-07-07T17:10:24.359+08:00'
+permalink: /🧰 本库指南/Obsidian/obsidian相关笔记/Obsidian做为大二大脑工具的评分.md
+publish: true
+published: '2025-07-07T17:10:24.359+08:00'
+title: Obsidian做为大二大脑工具的评分
+---
+[The Rise of Obsidian as a Second Brain | ft. Nick Milo - YouTube](https://www.youtube.com/watch?v=nz99I7apNLI)
+
+![Pasted image 20230317221306](https://pub-pic.oldwinter.top/2025/06/a8f18559fb799bc5447ba1ab9a1c3c68.png)

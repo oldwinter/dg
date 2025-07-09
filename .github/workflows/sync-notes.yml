@@ -1,0 +1,117 @@
+name: 同步数字花园笔记
+
+on:
+  # 手动触发
+  workflow_dispatch:
+  
+  # 定时触发 - 每小时检查一次
+  schedule:
+    - cron: '0 * * * *'
+  
+  # 当同步脚本被修改时触发
+  push:
+    paths:
+      - 'sync_notes.py'
+      - 'requirements.txt'
+      - '.github/workflows/sync-notes.yml'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 检出当前仓库
+      uses: actions/checkout@v4
+      with:
+        # 需要完整历史以便提交更改
+        fetch-depth: 0
+        # 使用 Personal Access Token 以便推送更改
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: 设置Python环境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: 安装依赖
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: 配置Git
+      run: |
+        git config --global user.name 'GitHub Actions Bot'
+        git config --global user.email 'actions@github.com'
+    
+    - name: 检查源仓库是否有更新
+      id: check_updates
+      run: |
+        # 获取源仓库最新提交时间
+        LATEST_COMMIT=$(git ls-remote https://github.com/oldwinter/dg3.git HEAD | cut -f1)
+        echo "latest_commit=$LATEST_COMMIT" >> $GITHUB_OUTPUT
+        
+        # 检查是否有记录的上次同步提交
+        if [ -f ".last_sync_commit" ]; then
+          LAST_SYNC=$(cat .last_sync_commit)
+          echo "last_sync=$LAST_SYNC" >> $GITHUB_OUTPUT
+        else
+          echo "last_sync=" >> $GITHUB_OUTPUT
+        fi
+        
+        # 比较提交哈希
+        if [ "$LATEST_COMMIT" != "$LAST_SYNC" ]; then
+          echo "需要同步"
+          echo "needs_sync=true" >> $GITHUB_OUTPUT
+        else
+          echo "无需同步"
+          echo "needs_sync=false" >> $GITHUB_OUTPUT
+        fi
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+
+    
+    - name: 执行同步
+      if: steps.check_updates.outputs.needs_sync == 'true'
+      run: |
+        echo "开始同步笔记..."
+        python sync_notes.py --verbose
+        
+        # 记录本次同步的提交哈希
+        echo "${{ steps.check_updates.outputs.latest_commit }}" > .last_sync_commit
+    
+    - name: 检查是否有变更
+      if: steps.check_updates.outputs.needs_sync == 'true'
+      id: check_changes
+      run: |
+        git add .
+        if git diff --cached --quiet; then
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+          echo "没有检测到变更"
+        else
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "检测到变更"
+        fi
+    
+    - name: 提交并推送变更
+      if: steps.check_updates.outputs.needs_sync == 'true' && steps.check_changes.outputs.has_changes == 'true'
+      run: |
+        git commit -m "🤖 自动同步笔记从 dg3 仓库
+        
+        - 同步时间: $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+        - 源提交: ${{ steps.check_updates.outputs.latest_commit }}
+        - 同步文件数: $(find _notes -name '*.md' | wc -l)
+        "
+        git push
+    
+    - name: 输出同步结果
+      run: |
+        if [ "${{ steps.check_updates.outputs.needs_sync }}" == "true" ]; then
+          if [ "${{ steps.check_changes.outputs.has_changes }}" == "true" ]; then
+            echo "✅ 同步完成并推送了变更"
+          else
+            echo "✅ 同步完成但没有变更"
+          fi
+        else
+          echo "ℹ️ 源仓库无更新，跳过同步"
+        fi 

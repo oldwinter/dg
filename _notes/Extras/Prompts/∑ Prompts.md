@@ -5,7 +5,7 @@ modified: '2025-07-08T21:54:54.373+08:00'
 permalink: /Extras/Prompts/∑ Prompts.md
 publish: true
 published: '2025-07-08T21:54:54.373+08:00'
-title: Prompts
+title: ∑ Prompts
 ---
 ## 给工具用的整体规则型提示词
 

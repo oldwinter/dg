@@ -7,7 +7,7 @@ publish: true
 published: '2025-07-08T22:00:14.631+08:00'
 tags:
 - moc
-title: Area
+title: ∑ 2-Area
 ---
 ## 2025-06-27 cursor整理
 

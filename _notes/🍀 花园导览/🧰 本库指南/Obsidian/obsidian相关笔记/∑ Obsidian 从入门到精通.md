@@ -9,7 +9,7 @@ tags:
 - MOC
 - todo
 - AI生成
-title: Obsidian 从入门到精通
+title: ∑ Obsidian 从入门到精通
 ---
 # Obsidian 从入门到精通
 

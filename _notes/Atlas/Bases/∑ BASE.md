@@ -6,7 +6,7 @@ modified: '2025-06-06'
 permalink: /Atlas/Bases/∑ BASE.md
 publish: true
 published: '2025-07-09T18:42:31.701+08:00'
-title: BASE
+title: ∑ BASE
 ---
 ## 模板文件
 

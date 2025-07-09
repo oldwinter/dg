@@ -7,7 +7,7 @@ publish: true
 published: '2025-07-09T15:22:20.511+08:00'
 tags:
 - workflow
-title: Properties Added Readme
+title: _Properties Added Readme
 ---
 cards里面是经过简单link之后的卡片笔记。当符合某些分类properties的卡片越来越多，比如超过5张，超过10张，则可以考虑给他们加上专门的properties，同时养成新的习惯，以后新建这类笔记，直接用模板，或者手动添加properties。
 

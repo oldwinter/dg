@@ -7,7 +7,7 @@ publish: true
 published: '2025-07-08T21:33:59.221+08:00'
 tags:
 - workflow
-title: Spaces Readme
+title: _ Spaces Readme
 ---
 > 在Obsidian -> files and links -> excluded files里面将这个文件夹加入，降低搜索匹配优先级。
 

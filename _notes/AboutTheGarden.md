@@ -32,3 +32,7 @@ hello 👋，我是 oldwinter ❄️，一个云计算工程师，写过几万�
 这座花园里，我挖了很多坑 🕳，如果你想敦促我加速填坑，或有一些建议和问题，欢迎来 [Github Discussions](https://github.com/oldwinter/knowledge-garden/discussions)。或直接在下方自带的评论系统留言。如果方便的话，给个 star⭐️ 呗。
 
 最后，如果您发现了令人不适的内容，或我的个人隐私，请告知我，万分感谢 🦀🦀: cdd2zju@gmail.com。
+
+---
+
+{% include recent_notes.html %}

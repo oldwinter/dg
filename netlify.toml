@@ -1,5 +1,5 @@
 [build]
-  command = "cat _pages/index.md >> _notes/AboutTheGarden.md && jekyll build --trace"
+  command = "jekyll build --trace"
   publish = "_site"
 
 [build.environment]

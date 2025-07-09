@@ -57,12 +57,8 @@ class NotesSync:
     def get_title_from_filename(self, filepath):
         """从文件名提取标题"""
         filename = Path(filepath).stem  # 去掉扩展名
-        # 移除一些特殊前缀
-        title = re.sub(r'^[∑»§_\d\-\s]+', '', filename).strip()
-        # 如果清理后为空，使用原始文件名
-        if not title:
-            title = filename
-        return title
+        # 直接使用完整的文件名作为标题，保留所有特殊前缀
+        return filename
     
     def parse_frontmatter(self, content):
         """解析 frontmatter"""

@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { describe, it } from "node:test";
 import { fileURLToPath } from "node:url";
@@ -24,6 +24,10 @@ describe("garden layout language", () => {
   it("locks linux gems so Netlify can bundle install", () => {
     assert.match(lockfile, /^  x86_64-linux/m);
     assert.match(lockfile, /nokogiri \(1\.\d+\.\d+-x86_64-linux/);
+  });
+
+  it("does not tell Netlify to clone a notes submodule that is not a gitlink", () => {
+    assert.equal(existsSync(join(root, ".gitmodules")), false);
   });
 
   it("asks Netlify for a supported Node and Ruby", () => {

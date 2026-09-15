@@ -26,9 +26,10 @@ describe("garden layout language", () => {
     assert.match(lockfile, /nokogiri \(1\.\d+\.\d+-x86_64-linux/);
   });
 
-  it("asks Netlify for a supported Node for deploy plugins", () => {
+  it("asks Netlify for a supported Node and Ruby", () => {
     assert.match(netlify, /NODE_VERSION\s*=\s*"22"/);
     assert.doesNotMatch(netlify, /NODE_VERSION\s*=\s*"18"/);
+    assert.match(netlify, /RUBY_VERSION\s*=\s*"3\.3"/);
     assert.match(netlify, /bundle exec jekyll build --trace/);
   });
 

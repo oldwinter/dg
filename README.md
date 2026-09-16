@@ -1,23 +1,43 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8cfa8785-8df8-4aad-ad35-8f1c790b8baf/deploy-status)](https://app.netlify.com/sites/digital-garden-jekyll-template/deploys)
+# oldwinter 的公开数字花园
 
-# Digital garden Jekyll template
+这是 [oldwinter/dg](https://github.com/oldwinter/dg) 的 Jekyll 发布仓，不是上游模板演示站。第一次进来请先本地预览，再从 `_notes/` 和 [🍀 花园导览](_notes/🍀%20花园导览/🍀%20花园导览.md) 往下走。
 
-Use this template repository to get started with your own digital garden.
+不要把上游模板预览当成这个花园。
 
-**I wrote a tutorial explaining how to set it up: [Setting up your own digital garden with Jekyll](https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll)**
+## 本地预览
 
-Preview the template here: https://digital-garden-jekyll-template.netlify.app/
+需要 Ruby（可用 mise）和 Bundler：
 
-- Based on Jekyll, a static website generator
-- Supports Roam-style double bracket link syntax to other notes
-- Creates backlinks to other notes automatically
-- Features link previews on hover
-- Includes graph visualization of the notes and their links
-- Features a simple and responsive design
-- Supports Markdown or HTML notes
+```bash
+brew install mise
+mise install ruby
+bundle
+bundle exec jekyll serve
+```
 
-<img width="1522" alt="Screen Shot 2020-05-19 at 23 05 46" src="https://user-images.githubusercontent.com/8457808/82400515-7d026d80-9a25-11ea-83f1-3b9cb8347e07.png">
+更短的本机命令也写在 [README-new.md](README-new.md)。
+
+## 笔记在哪
+
+- [`_notes/`](_notes/)：花园正文
+- [`_pages/index.md`](_pages/index.md)：站点首页（时间线）
+- [🍀 花园导览](_notes/🍀%20花园导览/🍀%20花园导览.md)：逛花园的地图
+
+笔记从 [oldwinter/dg3](https://github.com/oldwinter/dg3) 的 `content` 同步进 `_notes/`。
+
+## 怎么同步
+
+步骤在 [SYNC_README.md](SYNC_README.md)：
+
+```bash
+pip install -r requirements.txt
+python sync_notes.py
+```
+
+## 模板致谢
+
+站点壳来自 [Maxime Vaillancourt 的 Jekyll digital garden 模板](https://github.com/maximevaillancourt/digital-garden-jekyll-template)。通用教程只说明壳怎么来的，不是本仓入口。
 
 ## License
 
-Source code is available under the [MIT license](LICENSE.md).
+源码沿用 [MIT](LICENSE)。

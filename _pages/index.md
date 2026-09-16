@@ -3,6 +3,8 @@
 
 ---
 
+<p>从 <a class="internal-link" href="{{ site.baseurl }}/🍀 花园导览/🍀 花园导览.md">🍀 花园导览</a> 开始逛这个花园。下面只是时间线，不是地图。</p>
+
 <strong>🆕 最近创建：</strong>
 <ul>
   {% assign recent_notes = site.notes | sort: "date created" | reverse %}

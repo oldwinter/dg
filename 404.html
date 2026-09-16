@@ -5,6 +5,10 @@ title: "404"
 id: "not-found"
 ---
 
+{% assign garden_guide = site.notes | where: "title", "🍀 花园导览" | first %}
+{% assign garden_guide_url = garden_guide.url | default: "/🍀 花园导览/🍀 花园导览.md" %}
+
 <div>
-  <h1>你到达了一个不存在的界面，施主<a href="/">请回</a>🙏</h1>
+  <h1>你到达了一个不存在的界面，这条路径没有对应笔记，施主<a href="{{ site.baseurl }}/">请回</a>🙏</h1>
+  <p>也可以从<a class="internal-link" href="{{ site.baseurl }}{{ garden_guide_url }}">🍀 花园导览</a>开始逛花园。</p>
 </div>
